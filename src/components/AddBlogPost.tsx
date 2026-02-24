@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 const AddBlogPost = ({ updatedBlogPost }: { updatedBlogPost: () => void }) => {
-    //State för titel
+    //State för att hantera titel
     const [title, setTitle] = useState("");
-    // State för beskrivning
+    //State för att hantera beskrivning
     const [text, setText] = useState("");
     //State för att hantera felmeddelanden
     const [error, setError] = useState<string | null>(null);
