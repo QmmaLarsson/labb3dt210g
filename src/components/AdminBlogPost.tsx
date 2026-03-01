@@ -15,6 +15,22 @@ const AdminBlogPost = ({ blogPost, updatedBlogPost }: { blogPost: BlogPostInterf
 
     //Spara ändringar
     const saveBlogPost = async () => {
+        //Validera inputfälten
+        if (title.trim().length < 3) {
+            setError("Titeln måste vara minst 3 tecken.");
+            return;
+        }
+
+        if (text.trim().length < 3) {
+            setError("Beskrivningen måste vara minst 3 tecken.");
+            return;
+        }
+
+        if (text.length > 2000) {
+            setError("Beskrivningen får vara max 2000 tecken.");
+            return;
+        }
+
         try {
             setError(null);
             setSaving(true);
@@ -50,6 +66,10 @@ const AdminBlogPost = ({ blogPost, updatedBlogPost }: { blogPost: BlogPostInterf
 
     //Tar bort ett blogginlägg när användaren klickar på "Ta bort"
     const deleteBlogPost = async () => {
+        //Alert-ruta som frågar om man vill fortsätta
+        const confirmed = window.confirm("Är du säker på att du vill ta bort detta blogginlägg?");
+        if (!confirmed) return;
+
         try {
             setError(null);
 
