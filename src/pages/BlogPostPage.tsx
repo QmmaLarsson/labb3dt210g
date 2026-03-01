@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import type BlogPostInterface from "../interfaces/BlogPostInterface";
+import "./BlogPostPage.css";
 
 const BlogPostPage = () => {
     const { id } = useParams<{ id: string }>();
@@ -49,8 +50,10 @@ const BlogPostPage = () => {
     return (
         <div>
             <h1>{post.title}</h1>
-            <p>{post.text}</p>
-            <p><b>Postad: </b>{new Date(post.createdAt).toLocaleDateString()}</p>
+            <div className="blogpost-page">
+                <p>{post.text}</p>
+                <p className="blog-date"><b>Postad: </b>{new Date(post.createdAt).toLocaleDateString()}</p>
+            </div>
         </div>
     );
 };

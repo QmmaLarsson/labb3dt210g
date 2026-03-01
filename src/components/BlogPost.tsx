@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 const BlogPost = ({ blogPost }: { blogPost: BlogPostInterface }) => {
     return (
         <article>
-            <h3>{blogPost.title}</h3>
+            <h2>{blogPost.title}</h2>
             <p>{blogPost.text}</p>
-            <p><b>Postad: </b>{new Date(blogPost.createdAt).toLocaleDateString()}</p>
+            <p className="blog-date"><b>Postad: </b>{new Date(blogPost.createdAt).toLocaleDateString()}</p>
             <Link to={"/blog/" + blogPost._id}>
-                <button>Läs mer</button>
+                <button className="blogpost-btn">Läs mer</button>
             </Link>
         </article>
     );

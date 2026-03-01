@@ -1,15 +1,16 @@
 import { NavLink } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
+import "./Header.css";
 
 const Header = () => {
     const { user, logout } = useAuth();
 
     return (
         <header>
-            <ul>
-                <li><NavLink to="/">Startsida</NavLink></li>
-                <li><NavLink to="/admin">Admin</NavLink></li>
-                <li>{!user ? <NavLink to="/login">Logga in</NavLink> : <button onClick={logout}>Logga ut</button>}</li>
+            <ul className="main-menu">
+                <li><NavLink to="/" className="menu-link">Startsida</NavLink></li>
+                <li><NavLink to="/admin" className="menu-link">Admin</NavLink></li>
+                <li>{!user ? <NavLink to="/login" className="menu-link">Logga in</NavLink> : <button onClick={logout} className="menu-button">Logga ut</button>}</li>
             </ul>
         </header>
     )

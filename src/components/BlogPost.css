@@ -1,0 +1,34 @@
+section {
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+
+article {
+    background-color: white;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.blog-date {
+    font-size: 1.2rem;
+    color: #B56D75;
+    opacity: 0.8;
+}
+
+.blogpost-btn {
+    padding: 1rem;
+    background-color: #D98F97;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.blogpost-btn:hover {
+    background-color: #B56D75;
+}

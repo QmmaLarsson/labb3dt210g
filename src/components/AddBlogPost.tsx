@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./AddBlogPost.css";
 
 const AddBlogPost = ({ updatedBlogPost }: { updatedBlogPost: () => void }) => {
     //State för att hantera titel
@@ -15,11 +16,16 @@ const AddBlogPost = ({ updatedBlogPost }: { updatedBlogPost: () => void }) => {
 
         //Validering av titel
         if (title.trim().length < 3) {
-            setError("Titel måste vara minst 3 tecken.");
+            setError("Titeln måste vara minst 3 tecken.");
             return;
         }
 
         //Validering av beskrivning
+        if (text.length < 3) {
+            setError("Beskrivningen måste vara minst 3 tecken.");
+            return;
+        }
+
         if (text.length > 2000) {
             setError("Beskrivningen får vara max 2000 tecken.");
             return;
@@ -66,7 +72,6 @@ const AddBlogPost = ({ updatedBlogPost }: { updatedBlogPost: () => void }) => {
             <label htmlFor="text"><b>Text:</b></label>
             <br />
             <textarea name="text" id="text" value={text} onChange={(e) => setText(e.target.value)} />
-            <br />
             <button className="addBtn" type="submit">Lägg till</button>
             {error && <p className="error">{error}</p>}
         </form>

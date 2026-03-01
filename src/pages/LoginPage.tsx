@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import "./LoginPage.css";
 
 const LoginPage = () => {
   //State för användarnamn
@@ -37,7 +38,7 @@ const LoginPage = () => {
   return (
     <div>
       <h1>Logga in</h1>
-      <form onSubmit={handleSubmit}>
+      <form className="loginForm" onSubmit={handleSubmit}>
         {error && <p className="error">{error}</p>}
         <label htmlFor="username">Användarnamn:</label>
         <br />
@@ -47,7 +48,7 @@ const LoginPage = () => {
         <br />
         <input id="password" type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
         <br />
-        <button type="submit">Logga in</button>
+        <button type="submit" className="loginBtn">Logga in</button>
       </form>
     </div>
   )

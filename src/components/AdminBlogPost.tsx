@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type BlogPostInterface from "../interfaces/BlogPostInterface";
 import "./BlogPost.css";
+import "./AdminBlogPost.css";
 
 const AdminBlogPost = ({ blogPost, updatedBlogPost }: { blogPost: BlogPostInterface, updatedBlogPost: Function }) => {
     //State för att hantera felmeddelanden
@@ -73,7 +74,7 @@ const AdminBlogPost = ({ blogPost, updatedBlogPost }: { blogPost: BlogPostInterf
 
     return (
         <article>
-            <form>
+            <form className="updateForm">
                 <label><b>Titel:</b></label>
                 <br />
                 <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
@@ -82,14 +83,14 @@ const AdminBlogPost = ({ blogPost, updatedBlogPost }: { blogPost: BlogPostInterf
                 <br />
                 <textarea value={text} onChange={(e) => setText(e.target.value)} />
                 <br />
-                <button type="button" className="saveBtn" onClick={saveBlogPost} disabled={saving}>
+                <button type="button" className="blogpost-btn" onClick={saveBlogPost} disabled={saving}>
                     Spara
                 </button>
-                <button type="button" className="deleteBtn" onClick={deleteBlogPost} style={{ marginLeft: "10px" }}>
+                <button type="button" className="delete-btn" onClick={deleteBlogPost} style={{ marginLeft: "10px" }}>
                     Ta bort
                 </button>
             </form>
-            <p><b>Postad: </b>{new Date(blogPost.createdAt).toLocaleDateString()}</p>
+            <p className="blog-date"><b>Postad: </b>{new Date(blogPost.createdAt).toLocaleDateString()}</p>
             {error && <p className="error">{error}</p>}
         </article>
     );

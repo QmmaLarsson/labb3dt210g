@@ -1,0 +1,50 @@
+header {
+    background-color: #D98F97;
+    color: white;
+    padding: 2rem;
+}
+
+.main-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    height: 60px;
+    gap: 1.5rem;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: white;
+    font-size: 2.0rem;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.menu-link:hover {
+    color: black;
+}
+
+.menu-link.active {
+    color: black;
+}
+
+.menu-button {
+    background-color: #D98F97;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2.0rem;
+    border: none;
+    padding: 0rem;
+    border-radius: 6px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.menu-button:hover {
+    color: black;
+}

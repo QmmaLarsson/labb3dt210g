@@ -1,0 +1,53 @@
+.loginForm {
+    margin: auto;
+    max-width: 700px;
+    padding: 3rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.loginForm label {
+    font-size: 2rem;
+}
+
+.loginForm input {
+    width: 100%;
+    padding: 0.7rem;
+    margin-top: 0.6rem;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    border: 2px solid #D98F97;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    transition: all 0.3s ease;
+}
+
+.loginForm input:focus {
+    outline: none;
+    border-color: #B56D75;
+    box-shadow: 0 0 0 3px rgba(159, 91, 99, 0.35);
+}
+
+.loginBtn {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #D98F97;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.loginBtn:hover {
+    background-color: #B56D75;
+}
+
+.error {
+    padding: 1rem;
+    background-color: #F9F9F3;
+    border-left: 4px solid #D98F97;
+    border-radius: 5px;
+}
