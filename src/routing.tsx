@@ -4,6 +4,7 @@ import LoginPage from "./pages/LoginPage";
 import AdminPage from "./pages/AdminPage";
 import Layout from "./components/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";
+import BlogPostPage from "./pages/BlogPostPage";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
                 element: (
                     <ProtectedRoute><AdminPage /></ProtectedRoute>
                 )
+            },
+            {
+                path: "/blog/:id",
+                element: <BlogPostPage />
             }
         ]
     }

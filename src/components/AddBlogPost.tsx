@@ -36,7 +36,8 @@ const AddBlogPost = ({ updatedBlogPost }: { updatedBlogPost: () => void }) => {
             const res = await fetch("https://apidt210g.onrender.com/api/blog", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + localStorage.getItem("token")
                 },
                 body: JSON.stringify(newBlogPost),
             });

@@ -7,7 +7,9 @@ const AdminBlogPost = ({ blogPost, updatedBlogPost }: { blogPost: BlogPostInterf
     const [error, setError] = useState<string | null>(null);
     //State för att hantera inputfält
     const [title, setTitle] = useState(blogPost.title);
+    //State för text
     const [text, setText] = useState(blogPost.text);
+    //State för att spara
     const [saving, setSaving] = useState(false);
 
     //Spara ändringar
@@ -25,7 +27,10 @@ const AdminBlogPost = ({ blogPost, updatedBlogPost }: { blogPost: BlogPostInterf
             //Skickar PUT-request till API
             const res = await fetch("https://apidt210g.onrender.com/api/blog/" + blogPost._id, {
                 method: "PUT",
-                headers: { "Content-Type": "application/json" },
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + localStorage.getItem("token")
+                },
                 body: JSON.stringify(updatedPost)
             });
 
@@ -50,6 +55,9 @@ const AdminBlogPost = ({ blogPost, updatedBlogPost }: { blogPost: BlogPostInterf
             //Skickar DELETE-request till API
             const res = await fetch(`https://apidt210g.onrender.com/api/blog/${blogPost._id}`, {
                 method: "DELETE",
+                headers: {
+                    "Authorization": "Bearer " + localStorage.getItem("token")
+                }
             });
 
             //Om delete lyckas hämtas alla blogginlägg igen
