@@ -12,6 +12,6 @@ Syftet med uppgiften var är att utveckla en Single Page Application med React o
 
 **Lösning på uppgift:**
 Applikationen är en webbapplikation där användare kan se en publik lista med blogginlägg, visa enskilda blogginlägg (även detta publikt), logga in via JWT-autentisering och hantera innehåll i en skyddad administrationsdel.
-.
+
 **Länk till publicerad sida:**
 https://labb3dt210g.netlify.app/
